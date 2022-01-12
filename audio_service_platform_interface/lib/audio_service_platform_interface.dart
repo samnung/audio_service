@@ -1336,6 +1336,9 @@ class AudioServiceConfigMessage {
   /// [artDownscaleWidth] must also be specified.
   final int? artDownscaleHeight;
 
+  /// Show skip buttons in iOS/macOS Control Center instead of seek.
+  final bool darwinShowSkipButtons;
+
   /// The interval to be used in [AudioHandlerCallbacks.fastForward]. This value will
   /// also be used on iOS to render the skip-forward button. This value must be
   /// positive.
@@ -1371,6 +1374,7 @@ class AudioServiceConfigMessage {
     this.androidStopForegroundOnPause = true,
     this.artDownscaleWidth,
     this.artDownscaleHeight,
+    this.darwinShowSkipButtons = false,
     this.fastForwardInterval = const Duration(seconds: 10),
     this.rewindInterval = const Duration(seconds: 10),
     this.preloadArtwork = false,
@@ -1398,6 +1402,7 @@ class AudioServiceConfigMessage {
         'androidStopForegroundOnPause': androidStopForegroundOnPause,
         'artDownscaleWidth': artDownscaleWidth,
         'artDownscaleHeight': artDownscaleHeight,
+        'darwinShowSkipButtons': darwinShowSkipButtons,
         'fastForwardInterval': fastForwardInterval.inMilliseconds,
         'rewindInterval': rewindInterval.inMilliseconds,
         'preloadArtwork': preloadArtwork,
